@@ -1,5 +1,4 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-import os
+from langchain_google_genai import ChatGoogleGenerativeAI   
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain_core.messages import HumanMessage
 from langgraph.checkpoint.memory import MemorySaver
@@ -12,12 +11,6 @@ from langgraph.prebuilt import create_react_agent
 
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 
-os.environ["LANGSMITH_TRACING"] = "true"
-os.environ["LANGSMITH_ENDPOINT"] = "https://api.smith.langchain.com"
-os.environ["LANGSMITH_API_KEY"] = "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"
-os.environ["LANGSMITH_PROJECT"] = "Bai" 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAUwMc3lBZdf73j1TSvRJHkD_nDKfzesKc"
-os.environ["TAVILY_API_KEY"] = "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"
 # Initialize LLM
 model = ChatGoogleGenerativeAI(
     # model="gemini-1.5-pro",
