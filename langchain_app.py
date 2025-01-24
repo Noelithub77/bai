@@ -6,10 +6,17 @@ from langgraph.prebuilt import create_react_agent
 from datetime import datetime
 from langchain_core.tools import tool
 from langgraph.checkpoint.memory import MemorySaver  
+from langchain.prompts import ChatPromptTemplate
 from langchain_core.messages import SystemMessage
-from langgraph.prebuilt import create_react_agent
+# from langgraph.prebuilt import create_react_agent
+from dotenv import load_dotenv
+load_dotenv()
+from langchain.schema.output_parser import StrOutputParser
+from langchain.agents import AgentExecutor, create_react_agent
+from vdb_management import vdb
 
-from langchain.agents import AgentExecutor, create_tool_calling_agent
+
+
 
 # Initialize LLM
 model = ChatGoogleGenerativeAI(
@@ -24,6 +31,8 @@ model = ChatGoogleGenerativeAI(
 
 memory = MemorySaver()
 
+vdb_obj = vdb(persist_directory="db")
+
 search = TavilySearchResults(max_results=5)
 
 @tool
@@ -33,13 +42,30 @@ def get_date_and_time_context(input: str) -> str:
 
 tools = [search,get_date_and_time_context]
 
-system_message = SystemMessage(content='''You are bai, brilliant pala's ai chatbot to help students studying for jee/neet to clear their doubts.
+prompt_template = ChatPromptTemplate.from_messages(
+    [
+        ("system", '''You are bai, brilliant pala's ai chatbot to help students studying for jee/neet to clear their doubts.
 Only answer academic doubts, related to jee or neet and avoid any other question by simply guiding 
-them to use it for academic purposes only.''')
-
-langgraph_agent_executor = create_react_agent(
-    model, tools, state_modifier=system_message, checkpointer=memory
+them to use it for academic purposes only.'''),
+        ("human", "{querry}"),
+    ]
 )
 
-agent = create_tool_calling_agent(model, tools, system_message)
-agent_executor = AgentExecutor(agent=agent, tools=tools)
+# system_message = SystemMessage(content='''You are bai, brilliant pala's ai chatbot to help students studying for jee/neet to clear their doubts.
+# Only answer academic doubts, related to jee or neet and avoid any other question by simply guiding 
+# them to use it for academic purposes only.''')
+
+# langgraph_agent_executor = create_react_agent(
+#     model, tools, state_modifier=system_message, checkpointer=memory
+# )
+
+agent = create_react_agent(model, tools)
+agent_executor = AgentExecutor(agent=agent, tools=tools,memory=memory,verbose=True)
+while True:
+    user_input = input("Please enter your academic question (type 'exit' to quit): ")
+    if user_input.lower() == 'exit':
+        break
+    response = agent_executor.run(HumanMessage(content=user_input))
+    print(response.content)
+    
+final_chain = prompt_template | agent_executor  | StrOutputParser()

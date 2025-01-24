@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_app import chat
+from bai_app import chat
 
 st.title("Bai (Brilliant.ai) ")
 
