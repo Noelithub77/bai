@@ -25,7 +25,6 @@ llm = ChatGoogleGenerativeAI(
     temperature=0.3,
 )
 
-# 3. Create Tools with @tool decorator
 @tool
 def vector_retrieval(query: str) -> str:
     """Searches knowledge base for technical documentation and internal resources."""
@@ -35,7 +34,6 @@ def vector_retrieval(query: str) -> str:
 tools = [
     TavilySearchResults(max_results=3),
     vector_retrieval,
-    # llm-math is automatically added through tool calling
 ]
 
 # 4. ChromaDB Vectorstore Setup with Persistence
@@ -77,22 +75,19 @@ def chat(prompt: str) -> dict:
     message_history.add_ai_message(response["output"])
     return {"final_response": response["output"]}
 
-# Example Usage
 if __name__ == "__main__":
-    # Embed sample text
-    embed_txt_to_chroma("knowledge.txt")
+    embed_txt_to_chroma("dnf.txt")
     
-    # First interaction
-    response = agent_executor.invoke({
-        "input": "What's the capital gains tax rate for 2024? Check our knowledge base first.",
-        "chat_history": message_history.messages
-    })
-    message_history.add_user_message(response["input"])
-    message_history.add_ai_message(response["output"])
-    
-    # Follow-up with calculation
-    response = agent_executor.invoke({
-        "input": '''Calculate 15% of the amount I mentioned earlier if it was $150,000''',
-        "chat_history": message_history.messages
-    })
-    print(response["output"])
+    while True:
+        user_input = input("Enter your question: ")
+        if user_input.lower() in ["exit", "quit"]:
+            break
+        
+        response = agent_executor.invoke({
+            "input": user_input,
+            "chat_history": message_history.messages
+        })
+        message_history.add_user_message(user_input)
+        message_history.add_ai_message(response["output"])
+        
+        print(response["output"])

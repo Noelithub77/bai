@@ -19,6 +19,8 @@ def extract_pdf_to_text(pdf_path, output_txt_path, ocr_fallback=False):
     metadata = doc.metadata
     extracted_tables = []
     extracted_images = []
+    temp_img_dir = "temp_images"
+    os.makedirs(temp_img_dir, exist_ok=True)
 
     # Extract metadata
     full_text.append(f"=== METADATA ===\n{json.dumps(metadata, indent=2)}\n")
@@ -36,7 +38,8 @@ def extract_pdf_to_text(pdf_path, output_txt_path, ocr_fallback=False):
             if tables:
                 extracted_tables.append(f"\n=== PAGE {page_num + 1} TABLES ===")
                 for table in tables:
-                    extracted_tables.append("\n".join(["\t".join(row) for row in table]))
+                    cleaned_table = [[cell if cell is not None else "" for cell in row] for row in table]
+                    extracted_tables.append("\n".join(["\t".join(row) for row in cleaned_table]))
 
         # Extract images and apply OCR if needed
         img_list = page.get_images(full=True)
@@ -45,7 +48,7 @@ def extract_pdf_to_text(pdf_path, output_txt_path, ocr_fallback=False):
             base_image = doc.extract_image(xref)
             image_bytes = base_image["image"]
             img = Image.open(io.BytesIO(image_bytes))
-            img_path = f"page_{page_num}_img_{img_index}.png"
+            img_path = os.path.join(temp_img_dir, f"page_{page_num}_img_{img_index}.png")
             img.save(img_path)
             if ocr_fallback:
                 ocr_text = pytesseract.image_to_string(img)
@@ -58,11 +61,11 @@ def extract_pdf_to_text(pdf_path, output_txt_path, ocr_fallback=False):
         f.write("\n".join(extracted_images))
 
     # Clean up temporary images
-    for img_file in os.listdir():
-        if img_file.startswith("page_") and img_file.endswith(".png"):
-            os.remove(img_file)
+    for img_file in os.listdir(temp_img_dir):
+        os.remove(os.path.join(temp_img_dir, img_file))
+    os.rmdir(temp_img_dir)
 
 # Usage
-input_pdf_path = "dnf.pdf"
+input_pdf_path = "./data/dnf.pdf"
 output_txt_path = os.path.splitext(input_pdf_path)[0] + ".txt"
 extract_pdf_to_text(input_pdf_path, output_txt_path)
