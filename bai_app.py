@@ -1,10 +1,10 @@
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain.agents import AgentExecutor, create_tool_calling_agent
-from langchain.memory import ChatMessageHistory
+from langchain_community.chat_message_histories import ChatMessageHistory
 from dotenv import load_dotenv
 load_dotenv()
 
