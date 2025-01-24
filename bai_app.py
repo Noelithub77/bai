@@ -76,7 +76,7 @@ def chat(prompt: str) -> dict:
     return {"final_response": response["output"]}
 
 if __name__ == "__main__":
-    embed_txt_to_chroma("dnf.txt")
+    # embed_txt_to_chroma("dnf.txt")
     
     while True:
         user_input = input("Enter your question: ")
