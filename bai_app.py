@@ -73,8 +73,18 @@ def format_response(response: dict) -> str:
             [f"[^{i+1}] {src}" for i, src in enumerate(response["sources"])]
         )
     return output
+    
+def chat(prompt: str) -> dict:
+    """Function to handle chat interaction with the agent."""
+    response = agent_executor.invoke({
+        "input": prompt,
+        "chat_history": message_history.messages
+    })
+    message_history.add_user_message(prompt)
+    message_history.add_ai_message(response["output"])
+    return {"final_response": response["output"]}
 
-def chat_loop():
+if __name__ == "__main__":
     while True:
         try:
             user_input = input("\nStudent: ")
@@ -96,6 +106,3 @@ def chat_loop():
             print(f"Error: {str(e)}")
             message_history.clear()
             vectorstore.persist()
-
-if __name__ == "__main__":
-    chat_loop()
