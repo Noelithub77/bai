@@ -3,7 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
 from langchain_chroma import Chroma
 from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain.agents import AgentExecutor, create_tool_calling_agent
+from langchain.agents import AgentExecutor, create_react_agent  # Updated import
 from langchain_community.chat_message_histories import ChatMessageHistory
 from dotenv import load_dotenv
 from typing import Any, Dict
@@ -45,7 +45,7 @@ def web_search(query: str) -> Dict[str, Any]:
     """Search web for academic JEE/NEET content. Returns structured results with sources."""
     from langchain_community.tools.tavily_search import TavilySearchResults
     tavily = TavilySearchResults(max_results=3)
-    results = tavily.invoke({"query": f"{query} site:gov.in OR site:nta.ac.in"})  # Official sources
+    results = tavily.invoke({"query": f"{query}"})  
     
     return {
         "name": "web_search",
@@ -54,7 +54,6 @@ def web_search(query: str) -> Dict[str, Any]:
     }
     
 tools = [
-    # TavilySearchResults(max_results=3, name="web_search"),
     web_search,
     vector_retrieval,
 ]
@@ -66,7 +65,8 @@ prompt = ChatPromptTemplate.from_messages([
     MessagesPlaceholder("agent_scratchpad"),
 ])
 
-agent = create_tool_calling_agent(llm, tools, prompt)
+# Updated agent creation to use React agent
+agent = create_react_agent(llm, tools, prompt)
 agent_executor = AgentExecutor(
     agent=agent,
     tools=tools,
