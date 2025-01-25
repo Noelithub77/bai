@@ -6,6 +6,7 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_community.chat_message_histories import ChatMessageHistory
 from dotenv import load_dotenv
+from typing import Any, Dict
 load_dotenv()
 
 # 1. Enhanced System Instruction & Chat History
@@ -13,7 +14,7 @@ system_instruction = """You are Bai, Pala's AI assistant for JEE/NEET students. 
 1. Only answer academic questions related to JEE/NEET
 2. Use tools for calculations, web search, and knowledge retrieval
 3. Always respond in markdown with clear explanations
-4. ALways use web search whenever u feel uncertain """
+4. Always use web search whenever you feel uncertain"""
 
 message_history = ChatMessageHistory()
 
@@ -30,30 +31,39 @@ vectorstore = Chroma(
     collection_name="jee_neet_knowledge",
 )
 
-# 3. Improved Tool Definitions
+# 3. Corrected Tool Definitions
 @tool
-def vector_retrieval(query: str) -> dict:  # Return structured data
-    """Search JEE/NEET knowledge base. Returns dict with 'content' and 'sources'."""
+def vector_retrieval(query: str) -> str:
+    """Search JEE/NEET knowledge base. Returns content with sources."""
     docs = vectorstore.similarity_search(query, k=3)
-    return {
-        "name": "vector_retrieval",
-        "content": "\n".join([doc.page_content for doc in docs]),
-        "sources": [doc.metadata.get("source", "") for doc in docs]
-    }
+    content = "\n".join([doc.page_content for doc in docs])
+    sources = "\n".join([f"- {doc.metadata.get('source', '')}" for doc in docs])
+    return f"{content}\n\nSources:\n{sources}"
 
+@tool
+def web_search(query: str) -> Dict[str, Any]:
+    """Search web for academic JEE/NEET content. Returns structured results with sources."""
+    from langchain_community.tools.tavily_search import TavilySearchResults
+    tavily = TavilySearchResults(max_results=3)
+    results = tavily.invoke({"query": f"{query} site:gov.in OR site:nta.ac.in"})  # Official sources
+    
+    return {
+        "name": "web_search",
+        "content": "\n".join([f"{i+1}. {res['content']}" for i, res in enumerate(results)]),
+        "sources": [res["url"] for res in results]
+    }
+    
 tools = [
-    TavilySearchResults(max_results=3, name="web_search"),
+    # TavilySearchResults(max_results=3, name="web_search"),
+    web_search,
     vector_retrieval,
 ]
-
-# 4. Enhanced Vectorstore Setup
-
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", system_instruction),
     MessagesPlaceholder("chat_history", optional=True),
     ("human", "{input}"),
-    MessagesPlaceholder("agent_scratchpad", optional=True),
+    MessagesPlaceholder("agent_scratchpad"),
 ])
 
 agent = create_tool_calling_agent(llm, tools, prompt)
@@ -66,16 +76,11 @@ agent_executor = AgentExecutor(
 )
 
 def format_response(response: dict) -> str:
-    """Add source attribution and formatting"""
-    output = response["output"]
-    if "sources" in response:
-        output += "\n\n**Sources:**\n" + "\n".join(
-            [f"[^{i+1}] {src}" for i, src in enumerate(response["sources"])]
-        )
-    return output
-    
+    """Format response with proper markdown"""
+    return response["output"].replace("Sources:", "\n\n**Sources:**")
+
 def chat(prompt: str) -> dict:
-    """Function to handle chat interaction with the agent."""
+    """Handle chat interaction with the agent."""
     response = agent_executor.invoke({
         "input": prompt,
         "chat_history": message_history.messages
