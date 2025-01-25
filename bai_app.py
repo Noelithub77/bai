@@ -1,24 +1,41 @@
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.prompts import PromptTemplate
 from langchain_core.tools import tool
 from langchain_chroma import Chroma
-from langchain_community.tools.tavily_search import TavilySearchResults
-from langchain.agents import AgentExecutor, create_react_agent  # Updated import
+from langchain.agents import AgentExecutor, create_react_agent
+from langchain.agents.format_scratchpad import format_log_to_str
 from langchain_community.chat_message_histories import ChatMessageHistory
 from dotenv import load_dotenv
 from typing import Any, Dict
 load_dotenv()
 
-# 1. Enhanced System Instruction & Chat History
+# 1. Enhanced System Instruction with tool placeholders
 system_instruction = """You are Bai, Pala's AI assistant for JEE/NEET students. Follow these rules:
 1. Only answer academic questions related to JEE/NEET
 2. Use tools for calculations, web search, and knowledge retrieval
 3. Always respond in markdown with clear explanations
-4. Always use web search whenever you feel uncertain"""
+4. Always use web search whenever you feel uncertain
+
+Available Tools:
+{tools}
+
+Tool Names (use exactly these when needed): {tool_names}
+
+Use the following format:
+Question: the input question
+Thought: your reasoning steps
+Action: the tool name (one of [{tool_names}])
+Action Input: the tool input
+Observation: the tool result
+... (repeat until final answer)
+Thought: I now know the final answer
+Final Answer: the final response
+
+Begin!"""
 
 message_history = ChatMessageHistory()
 
-# 2. Optimized Gemini Configuration
+# 2. Model and Vectorstore Configuration
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash-exp",
     temperature=0.3,
@@ -31,7 +48,7 @@ vectorstore = Chroma(
     collection_name="jee_neet_knowledge",
 )
 
-# 3. Corrected Tool Definitions
+# 3. Tool Definitions
 @tool
 def vector_retrieval(query: str) -> str:
     """Search JEE/NEET knowledge base. Returns content with sources."""
@@ -53,28 +70,29 @@ def web_search(query: str) -> Dict[str, Any]:
         "sources": [res["url"] for res in results]
     }
     
-tools = [
-    web_search,
-    vector_retrieval,
-]
+tools = [web_search, vector_retrieval]
+tool_names = ", ".join([t.name for t in tools])
 
-prompt = ChatPromptTemplate.from_messages([
-    ("system", system_instruction),
-    MessagesPlaceholder("chat_history", optional=True),
-    ("human", "{input}"),
-    MessagesPlaceholder("agent_scratchpad"),
-])
+# 4. React Agent Configuration
+react_template = system_instruction + "\n\nQuestion: {input}\nThought:{agent_scratchpad}"
+prompt = PromptTemplate.from_template(react_template)
 
-# Updated agent creation to use React agent
-agent = create_react_agent(llm, tools, prompt)
+agent = create_react_agent(
+    llm=llm,
+    tools=tools,
+    prompt=prompt
+)
+
 agent_executor = AgentExecutor(
     agent=agent,
     tools=tools,
     verbose=True,
     handle_parsing_errors=True,
-    max_iterations=3
+    max_iterations=3,
+    format_intermediate_steps=format_log_to_str
 )
 
+# 5. Response Formatting and Chat Handling
 def format_response(response: dict) -> str:
     """Format response with proper markdown"""
     return response["output"].replace("Sources:", "\n\n**Sources:**")
@@ -83,7 +101,9 @@ def chat(prompt: str) -> dict:
     """Handle chat interaction with the agent."""
     response = agent_executor.invoke({
         "input": prompt,
-        "chat_history": message_history.messages
+        "tools": "\n".join([f"{t.name}: {t.description}" for t in tools]),
+        "tool_names": tool_names,
+        "agent_scratchpad": ""
     })
     message_history.add_user_message(prompt)
     message_history.add_ai_message(response["output"])
@@ -98,7 +118,9 @@ if __name__ == "__main__":
                 
             response = agent_executor.invoke({
                 "input": user_input,
-                "chat_history": message_history.messages
+                "tools": "\n".join([f"{t.name}: {t.description}" for t in tools]),
+                "tool_names": tool_names,
+                "agent_scratchpad": ""
             })
             
             formatted = format_response(response)
