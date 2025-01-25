@@ -88,7 +88,6 @@ agent_executor = AgentExecutor(
     tools=tools,
     verbose=True,
     handle_parsing_errors=True,
-    max_iterations=3,
     format_intermediate_steps=format_log_to_str
 )
 
