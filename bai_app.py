@@ -70,7 +70,8 @@ def web_search(query: str) -> Dict[str, Any]:
         "sources": [res["url"] for res in results]
     }
     
-tools = [web_search, vector_retrieval]
+# tools = [web_search, vector_retrieval]
+tools = [web_search]
 tool_names = ", ".join([t.name for t in tools])
 
 # 4. React Agent Configuration
