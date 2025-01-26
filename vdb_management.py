@@ -55,7 +55,7 @@ class vdb:
             texts = text_splitter.split_documents(documents)
             
             self.logger.info(f"Adding {len(texts)} chunks to vector database")
-            ids = self.chromadb.add_documents(texts)
+            ids = self.chromadb.add_documents(texts, collection_name="data_collection")
             # Remove persist() call - ChromaDB handles persistence automatically
             
             tracking_data[resolved_path] = {
@@ -66,7 +66,7 @@ class vdb:
             self._save_tracking(tracking_data)
             
             self.logger.info(f"Successfully added file: {file_path}")
-            return f"Added {len(texts)} chunks from {file_path}"
+            return f"Added {len(texts)} chunks from {file_path} to collection 'data_collection'"
         except Exception as e:
             self.logger.error(f"Error adding file {file_path}: {str(e)}", exc_info=True)
             return f"Error adding file: {str(e)}"
@@ -113,7 +113,7 @@ class vdb:
             for path, data in tracking_data.items()
         }
 
-    def search_similar(self, query, k=3):
+    def search_similar(self, query, k=5):
         docs = self.chromadb.similarity_search(query, k=k)
         return [
             {

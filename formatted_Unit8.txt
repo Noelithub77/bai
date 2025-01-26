@@ -1,0 +1,236 @@
+Unit 8 The d- and f- Block Elements I. Answer the following questions. Each
+  question carries one mark 1. Define transition elements. Ans. Transition
+  element is defined as the one which has incompletely filled d orbitals in its
+  ground state or in any one of its oxidation states. 2. What is the position of
+  the d block elements in the periodic table? Ans. The d block elements are in
+  the middle of s and p blocks, comprising the groups 3 to 12. They are the four
+  rows of elements in the periods 4th (3d series), 5th (4d series), 6th ( 5d
+  series) and 7th ( 6d series). 3. Zinc, cadmium and mercury of group 12 are not
+  regarded as transition metals, Why ? Ans. Zinc, cadmium and mercury of group
+  12 have full d10 configuration ( d orbitals are completely filled ) in their
+  ground state as well as in their common oxidation states and hence, are not
+  regarded as transition metals 5.Write the general electronic configuration of
+  d block elements. Ans. [ Noble gas] (n-1)d1-10ns1-2 4. Why d- block elements
+  are named as ‘transition elements ‘ ? Ans. The d–block elements occupies the
+  middle of the periodic table and their properties are transitional between s–
+  and p– block elements. 6. Write the general outer electronic configuration of
+  d- block elements. . Ans. The general outer electronic configuration of d-
+  block elements is (n-1)d1–10 ns1–2 7. Write the general electronic
+  configuration of f- block elements. Ans. The general electronic configuration
+  of f- block elements (Lanthanoids) is [Xe] 4f1 – 14 5d 0- 1 6s2 8.Name a
+  member of the lanthanoid series which is well known to exhibit +4 oxidation
+  state. Ans. Cerium 9. The outer electronic configuration of Cr is 3d5 4s1
+  instead of 3d44s2, why? Ans. Half filled (3d5) orbitals are relatively more
+  stable, hence one electron of 4s orbital jumps to 3d orbital. 10. The outer
+  electronic configuration of Cu is 3d10 4s1 instead of 3d94s2 , why? Ans.
+  Completely filled (3d10 ) orbitals are relatively more stable, hence one
+  electron of 4s orbital jumps to 3d orbital. 11. Account for high melting point
+  and boiling points of transition metals. Ans. The melting and boiling points
+  of transition metals are high because of the involvement of greater number of
+  electrons from (n-1)d orbitals in addition to the ns electrons in the inter
+  atomic metallic bonding. 12.What is the trend in melting points of transition
+  metals in a series? Ans.The melting points of the transition metals in a
+  series rise to a maximum at the middle of the series (i.e. Cr or Mo or W -
+  element with d 5 configuration ) and fall regularly as the atomic number
+  increases. 13.Why do transition metals have higher enthalpies of atomization?
+  Ans. Involvement of a large number of unpaired electrons of d orbitals favour
+  stronger inter atomic interactions resulting in stronger bonds between the
+  atoms of a metal and higher enthalpies of atomization. 14.Name one 3d series
+  elements, that do not show variable oxidation states. Ans. Sc (+3) 16. Name 3d
+  series metal which shows highest oxidation state. Ans. The highest oxidation
+  state shown by 3d series transiNa tion metals is +7 by Mn 15.Transition metals
+  exhibit variable oxidation states in its compounds, why? Ans. Transition
+  metals exhibit variable oxidation states in its compounds due to the
+  availability of both ns & (n – 1 ) d electrons for bond formation. 17. Name a
+  metal in the 3d series of transition metals which exhibit +1 oxidation state
+  most frequently. Ans. copper 18.What is the trend in oxidation state of
+  transition metals ? Ans. The oxidation state increases with increase in atomic
+  number & reaches a maximum in the middle and then decreases. 19. 3d series
+  transition metals exhibit +2 as the most common oxidation state (except Sc)
+  why? Ans. The +2 oxidation state, which commonly occurs for nearly all the
+  transition metals is due to the loss of their outer 4s electrons 20. Why
+  transition metals and their compounds shows paramagnetic behavior ? Ans. The
+  transition metal ions are generally containing one or more unpaired electrons
+  in them & hence their compounds are generally paramagnetic. 21. Name an of
+  alloys of transition metals with non transition metals. Ans. Brass ( Cu & Zn)
+  or Bronze ( Cu & Sn) 22.What is the action of neutral or faintly alkaline
+  permanganate solution on iodide ? Ans. Alkaline permanganate solution oxidize
+  iodide to iodate. 23. What happens when potassium permanganate is heated to
+  513 K ? Ans. Potassium permanganate decomposes at 513K to potassium manganate,
+  manganese dioxide and oxygen. 24. What is the principal oxidation state
+  exhibited by the lanthanoids? Ans. The principal oxidation state of
+  lanthanoids is +3. 25.Write the spin-only formula used to calculate the
+  magnetic moment of metal ions. Ans. The magnetic moment is determined by using
+  the spin only formula, where n is the number of unpaired electrons and μ is
+  the magnetic moment in units of Bohr magneton (BM). 26. Why is Sc3+ (or Zn2+ )
+  diamagnetic? Ans. Sc3+(Z=21) 3d0 no unpaired electron, n=0, μ=0. (or
+  Zn2+(Z=30) 3d10 no unpaired electron, n=0, μ=0) 27. What is the most common
+  oxidation state of lanthanoids and actionoids? Ans. The most common oxidation
+  state of lanthanoids and actionoids is +3. 28.What is Actinoid contraction?
+  Ans. There is a gradual decrease in the size of atoms or M3+ ions across the
+  series. This is known as the actinoid contraction. 29.Actinoid contraction is
+  more than lanthanoid contraction. Give reason. Ans. The actinoid contraction
+  is, more than lanthanoid contraction due to poor shielding by 5f electrons
+  from nuclear charge. 30. Actionoids show larger number of oxidation states
+  than lanthanoids. Why? Ans. In actinoids 5f, 6d and 7s levels are of
+  comparable energies ,hence electrons from these orbitals are available to lose
+  or share. 31. Give one use of Mischmetall . Ans. Mischmetall is used in
+  Mg-based alloy to produce bullets, shell and lighter flint. 32. Why transition
+  metals forms alloys readily? Ans. Transition metals readily form alloys with
+  other transition metals because of their similar radii 33. Give one use of
+  transition metal alloy. Ans.Ferrous alloys containing chromium, vanadium,
+  tungsten, molybdenum and manganese are used for the production of a variety of
+  steels. II. Answer the following questions. Each question carries TWO marks.
+  34. Name two characteristic properties exhibited by d – block elements due to
+  their partly filled d orbitals. Ans. The characteristic properties exhibited
+  by d – block elements due to their partly filled d orbitals are variable; (i)
+  Oxidation states (ii) Formation of coloured ions. 35. Name two typical
+  metallic properties displayed by transition elements. Ans.High tensile
+  strength, ductility malleability, high thermal and electrical conductivity and
+  metallic luster etc. 36. What are interstitial compounds? Give example. Ans.
+  Interstitial compounds are those which are formed when small atoms like H, C
+  or N are trapped inside the crystal lattices of transition metals. Example;
+  TiC, Mn4N, Fe3H, VH0.56 and TiH1.7, etc. 37. Give any two physical
+  characteristics of interstitial compounds. Ans.Two physical characteristics of
+  interstitial compounds are: (i) They have high melting points, higher than
+  those of pure metals. (ii) They are very hard and they retain metallic
+  conductivity. 38.Calculate the ‘spin only’ magnetic moment of M2+ (aq) ion (Z
+  = 27). Ans. M (z= 27 , 3d7 4s2)  M+2 (3d7 4s0) hence it has 3 unpaired
+  electrons n= 3 = 3(3+2) = 3.87 BM 39. The second ionisation enthalpy is high
+  for Cr and Cu , why? Ans: The second ionisation enthalpy is unusually high
+  values for Cr and Cu because when M+ ion ionize to M+2 ion , the d5 and d10
+  configurations of the M+ ions (i.e Cr+ or Cu+) are disrupted, with
+  considerable loss of exchange energy . 40. Why first ionisation enthalpy of Cr
+  is lower than that of Zn ? IE1 of Cr is lower, because removal of an electron
+  from Cr does not change the d (3d5 4s1 to 3d5 4s0 ) configuration . Cr (z= 24
+  , 3d5 4s1)  Cr+ (3d5 4s0) ------ IE1 +2 IE1 value for Zn is higher, because
+  removal of electron from 4s level needs more energy. Zn (z= 30 , 3d10 4s2) 
+  Zn+ (3d10 4s1) ------ IE1  IE1 (Zn) > IE1 (Cr) 41.Give two characteristics of
+  transition metal alloys. . The alloys are hard and have high melting points.
+  42.What is the action of heat on potassium permanganate ? Give equation. Ans.
+  It decomposes at 513K to potassium manganate, manganese dioxide and oxygen.
+  2KMnO4  K2MnO4 + MnO2 + O2 43. What is the action of neutral or faintly
+  alkaline permanganate solution on iodide ?Give equation. Ans. Alkaline
+  permanganate solution oxidize iodide to iodate. I- + 2MnO4- + H2O  IO3- +
+  2MnO2 + 2OH- 44. Explain the oxidising action of acidified potassium
+  dichromate on (iron(II) salts) Fe ions and write the ionic equations for the
+  reaction. Ans. Acidified potassium dichromate oxidises iron(II) salts to
+  iron(III). Cr2O7 2− + 14H+ + 6Fe2+ → 2Cr3+ + 6Fe3+ + 7H2O 45. The transition
+  metals generally form coloured compounds, why? Ans. The compounds of
+  transition elements shows colour due to presence of unpaired electron &
+  ability to undergo d-d transition. When an electron from a lower energy d
+  orbital is excited to a higher energy d orbital, the energy of excitation
+  corresponds to the frequency of light absorbed. This frequency generally lies
+  in the visible region. 46. Give reason “ transition metals and their many
+  compounds acts as good catalysts”. Ans. Transition metals and their many
+  compounds acts as good catalysts,it is due to (i) partially filled (n-1) d
+  orbital (ii)variable oxidation state and provide a suitable surface for the
+  reaction to take place. 47.Explain giving reason “transition metals form a
+  large number of complex compounds”. Ans.Transition metals form a large number
+  of (i) Small size & high charge density of complex compounds due to the ions
+  of transition metals. (ii) presence of vacant d orbitals of suitable for bond
+  formation. 48. What is the effect of increasing pH on a solution of potassium
+  dichromate? Ans.On increasing the pH of the solution Potassium dichromate
+  (orange) becomes potassium chromate (yellow) Cr2O7 2- + 2OH- → 2CrO4 2- + H2O
+  49.What happens when H2S is passed into potassium dichromate in acidic medium?
+  Give the equation. Ans. H2S gets oxidized to sulphur 2 S Cr2O7 −2 + 14H+ + 6e−
+  → 2Cr+3 + 7H2O 3H → 6H+ + 3S + 6e− Cr2O7 −2 + 3H2S + 8H+ → 2Cr+3 + 7H2O + 3S
+  50. What is ‘disproportionation’ of an oxidation state ? Give one example of
+  disproportionation reaction in aqueous solution. Ans. A particular oxidation
+  state , which is relatively less stable compared to other oxidation states ,
+  under goes disproportion. Manganese (VI) which is relatively less stable
+  changes over to manganese (VII) and manganese (IV) in acid solution. 3 MnO4-2
+  + 4H+  MnO2 +2MnO4-+ 2 H2O 51. What is lanthanoid contraction? Write any one
+  consequence of lanthanoid contraction. Ans. Steady decrease in the size of
+  lanthanides with increase in atomic number is known as lanthanoid contraction.
+  Due to lanthanoid contraction radii of members of 3rd transition series are
+  very much similar to corresponding members of 2nd series. 52.Write any two
+  consequences of lanthanoid contraction. Ans. Two consequences of lanthanoid
+  contrations are (i) The radii of the members of the third transition series to
+  be very similar to those of the corresponding members of the second series.
+  Ex. The almost identical radii of Zr (160 pm) and Hf (159 pm) & Nb (146pm) &
+  Ta (146pm) (ii) Difficulty in separation of lanthanoids due to similarity in
+  chemical properties. 53. Name the two series of f-block. Ans. The f-block
+  consists of the two series, lanthanoids (the fourteen elements following
+  lanthanum) and actinoids (the fourteen elements following actinium. 54. The
+  chemistry of actionoids is more complicated than lanthanoids. Why? Ans. The
+  actinoids are radioactive elements having half lifes varying. Some members can
+  be prepared only in nanogram quantities. These facts render their study more
+  difficult. 55.Write two comparisons of variability in oxidation states of
+  transition metals and non transition elements (p- block elements) ? Ans. 1. In
+  transition elements , variable oxidation state differ from each other by
+  unity, whereas in case of non transition elements , oxidation state differ by
+  units of two.(For example Fe exhibits o.s of +2 and +3 . similarly copper
+  exhibits two o.s of +1 and +2 . on the other hand, Sn, Pb exhibit o.s of +2
+  and +4.) 2. In transition elements, higher o.s are more favoured in elements
+  of higher atomic mass, whereas in p-block elements lower o.s are favoured by
+  heavier members ( due to inert pair effect, For example Mo(VI) and W(VI) are
+  more stable than Cr(VI). On the other hand Pb(II) is more stable than Sn(II))
+  56. What happens when (a) A lanthonoid reacts with dilute acids ? (b) A
+  lanthonoid reacts with water? Ans.(a) When lanthonoid reacts with dilute acids
+  , it liberates hydrogen gas. (b)When lanthonoid reacts with water , it forms
+  lanthanoid hydroxide and liberate hydrogen gas. 57. What is the gas liberated
+  when i) crystals of potassium permanganate is heated to 513K ? ii) acidified
+  potassium permanganate is treated with oxalate ion at 333K? Ans. i) When
+  crystals of potassium permanganate is heated to 513K Oxygen (O2) gas is
+  liberated . ii) Acidified potassium permanganate when treated with oxalate ion
+  at 333K liberates Carbon dioxide (CO2) gas. 58. What is the composition of
+  mischmetall? Give its one use. Ans. The composition of mischmetall is
+  lanthanoid metal (~ 95%) and iron (~ 5%) and traces of S, C, Ca and Al.
+  Mischmetall is used in Mg-based alloy to produce bullets, shell and lighter
+  flint 59. Show the interconversion of chromate and dichromate The chromates
+  and dichromates are interconvertible in aqueous solution depending upon pH of
+  the solution. At pH less than 7: Chromate (yellow) on adding acid becomes
+  dichromate (orange) 2CrO4 2- + 2H+ → Cr2O7 2- + H2O At pH more than 7 :
+  Dichromate (orange) on adding base becomes Chromate (yellow) Cr2O7 2- + 2OH- →
+  2CrO4 2- + H2O 60.How does the neutral or faintly alkalline potassium
+  permanganate solution react with (a) Iodide (b) thiosulphite? Write the ionic
+  equations for the reactions In neutral or faintly alkaline solutions: (a) The
+  oxidation of iodide to iodate: 2MnO4 − + H2O + I− ——> 2MnO2 + 2OH− + IO3 − (b)
+  Thiosulphate is oxidised almost quantitatively to sulphate: 8MnO4– + 3S2O3 2–
+  + H2O ——> 8MnO2 + 6SO4 2– + 2OH– III. Answer the following questions. Each
+  question carries THREE marks 61.Name the metal of the 1st row transition
+  series that i) has highest value for magnetic moment ii) has zero spin only
+  magnetic moment in its +2 oxidation state. iii) exhibit maximum number of
+  oxidation states. Ans. i) Chromium ii) Zinc iii) Manganese 62.Transition
+  metals form a large number of complex compounds.Give reason. Ans. Transition
+  metals for complex compounds due to, i) small sizes of metal cations ii) their
+  ionic charges and iii) availability of d orbitals for bond formation.
+  63.Explain the trend in atomic size of 3d series of transition elements with
+  reason. Ans. With increase in atomic number in 3d series - atomic size
+  decreases (Sc to Cr) , then remain almost constant (Cr to Cu) and increase
+  slightly at the end (Cu to Zn). Reason: In the beginning of the series the
+  screening (or shielding effect) effect of a d electron is not that effective,
+  hence the net electrostatic attraction between the nuclear charge and the
+  outermost electron increases , hence atomic size radius decreases. In the
+  middle of the series, increase in nuclear charge and increase in screening
+  effect balance each other. So atomic radii become almost constant. Increase in
+  atomic radii towards the end is due to the electro – electron repulsions
+  causes the expansion of electron cloud. 64. Explain trend in Ionisation
+  Enthalpies of 3d series of transition elements . Ans.Ionisation enthalpy
+  increase along each series of the transition elements from left to right.
+  However many small variations, IE of Chromium is lower because removal of an
+  electron from Chromium does not change in the d (3d5 4s1 to 3d5 4s0 )
+  configuration. I.E value for Zn (3d10 4s2) is higher because an electron is
+  removed from 4s level which needs more energy. 65. How is potassium dichromate
+  prepared from iron chromite ore? Ans.Potassium dichromate is manufactured from
+  chromite ore (FeCr2O4). (i) Chromite ore is fused (FeCr2O4) with sodium or
+  potassium carbonate in free access of air to get sodium chromate . 4FeCr2O4 +
+  8Na2CO3 + 7O2 → 8Na2CrO4 + 2Fe2O3 + 8CO2 (ii) The yellow solution of sodium
+  chromate is filtered and acidified with sulphuric acid to give a solution from
+  which orange sodium dichromate, Na2Cr2O7. 2H2O can be crystallised. 2Na2CrO4 +
+  2H+ → Na2Cr2O7 + 2Na+ + H2O Potassium dichromate prepared by treating the
+  solution of sodium dichromate with potassium chloride. Na2Cr2O7 + 2KCl →
+  K2Cr2O7 + 2NaCl Orange crystals of potassium dichromate crystallise out. 66.
+  Describe the preparation of potassium permanganate from manganous dioxide.
+  Potassium permanganate is prepared by fusion of MnO2 with an alkali metal
+  hydroxide and an oxidising agent like KNO3. This produces the dark green
+  K2MnO4 which disproportionates in a neutral or acidic solution to give
+  permanganate. 2MnO2 + 4KOH + O2 → 2K2MnO4 + 2H2O 3MnO4 2– + 4H+ → 2MnO4– +
+  MnO2 + 2H2O 67.How does the acidified permanganate solution react with (a)
+  iron(II) ions (b) oxalic acid and (c) hydrogen sulphide ? Write the ionic
+  equations for the reactions In acid solutions: (a) Fe2+ ion (green) is
+  converted to Fe3+ (yellow): 5Fe2+ + MnO4– + 8H+ ——> Mn2+ + 4H2O + 5Fe3+ (b)
+  Oxalate ion or oxalic acid is oxidised at 333 K: 5C2O4 2− + 2MnO4- + 16H+ ——>
+  2Mn2+ + 8H2O + 10CO2 (c) Hydrogen sulphide is oxidised, sulphur being
+  precipitated: H2S —> 2H+ + S2− 5S2− + 2MnO4 − + 16H+ ——> 2Mn2+ + 8H2O + 5S
