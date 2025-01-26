@@ -4,7 +4,7 @@ sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 from bai_app import chat
 
-st.title("BAi (Brilliant.ai) ")
+st.title("BAI (Brilliant.ai) ")
 
 # Initialize chat history
 if "messages" not in st.session_state:
