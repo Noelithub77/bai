@@ -23,9 +23,11 @@ if prompt:
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # Get and display assistant response
-    with st.chat_message("assistant"):
-        message = chat(prompt)["final_response"] 
-        st.markdown(message)
-        st.session_state.messages.append({"role": "assistant", "content": message})
+    # Show spinner while waiting for response
+    with st.spinner("Thinking..."):
+        # Get and display assistant response
+        with st.chat_message("assistant"):
+            message = chat(prompt)["final_response"]
+            st.markdown(message)
+            st.session_state.messages.append({"role": "assistant", "content": message})
 

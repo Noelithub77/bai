@@ -9,10 +9,8 @@ from dotenv import load_dotenv
 from typing import Any, Dict
 load_dotenv()
 
-# 1. Enhanced System Instruction with tool placeholders
 system_instruction = """You are Bai, Pala's AI assistant for JEE/NEET students. Follow these rules:
 1. Only answer academic questions related to JEE/NEET
-2. Use tools for calculations, web search, and knowledge retrieval
 3. Always respond in markdown with clear explanations
 4. Always use web search whenever you feel uncertain
 
@@ -35,7 +33,6 @@ Begin!"""
 
 message_history = ChatMessageHistory()
 
-# 2. Model and Vectorstore Configuration
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash-exp",
     temperature=0.3,
@@ -48,7 +45,6 @@ vectorstore = Chroma(
     collection_name="jee_neet_knowledge",
 )
 
-# 3. Tool Definitions
 @tool
 def vector_retrieval(query: str) -> str:
     """Search JEE/NEET knowledge base. Returns content with sources."""
